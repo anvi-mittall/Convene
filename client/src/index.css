@@ -1,0 +1,261 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #FFF4EC;
+  --color-ink: #2B2340;
+  --color-white: #FFFFFF;
+  --color-pink: #FFB3C7;
+  --color-mint: #B8E0D2;
+  --color-lavender: #C9B6FF;
+  --color-peach: #FFD6A5;
+
+  --font-sans: 'Bricolage Grotesque', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+@layer base {
+  *, *::before, *::after {
+    border-color: #2B2340;
+    border-radius: 0;
+  }
+
+  body {
+    background-color: #FFF4EC;
+    color: #2B2340;
+    font-family: 'Bricolage Grotesque', sans-serif;
+  }
+
+  :focus-visible {
+    outline: 3px solid #2B2340 !important;
+    outline-offset: 2px !important;
+  }
+}
+
+/* Allow rounded full only when explicitly requested for avatars or decor circles */
+.rounded-full, .circle-avatar {
+  border-radius: 9999px !important;
+}
+
+/* Hard offset shadows */
+.shadow-card {
+  box-shadow: 5px 5px 0px #2B2340;
+}
+
+.shadow-btn {
+  box-shadow: 4px 4px 0px #2B2340;
+}
+
+.shadow-btn:hover:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #2B2340;
+}
+
+.shadow-btn:active:not(:disabled) {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px #2B2340;
+}
+
+/* Common Components */
+.ticket-card {
+  background-color: #FFFFFF;
+  border: 2px solid #2B2340;
+  box-shadow: 5px 5px 0px #2B2340;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ticket-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px #2B2340;
+}
+
+/* Primary Button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #FFB3C7;
+  color: #2B2340;
+  font-weight: 700;
+  border: 2px solid #2B2340;
+  box-shadow: 4px 4px 0px #2B2340;
+  min-height: 44px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #2B2340;
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px #2B2340;
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Secondary Button */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #FFFFFF;
+  color: #2B2340;
+  font-weight: 700;
+  border: 2px solid #2B2340;
+  box-shadow: 4px 4px 0px #2B2340;
+  min-height: 44px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #2B2340;
+}
+
+.btn-secondary:active:not(:disabled) {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px #2B2340;
+}
+
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Ink Button (Active tab or dark button) */
+.btn-ink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #2B2340;
+  color: #FFFFFF;
+  font-weight: 700;
+  border: 2px solid #2B2340;
+  box-shadow: 4px 4px 0px #2B2340;
+  min-height: 44px;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+/* Mono Badges */
+.badge {
+  font-family: 'DM Mono', monospace;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  border: 2px solid #2B2340;
+  padding: 2px 8px;
+  background-color: #B8E0D2;
+  color: #2B2340;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+}
+
+.badge-white {
+  background-color: #FFFFFF;
+}
+
+.badge-pink {
+  background-color: #FFB3C7;
+}
+
+.badge-peach {
+  background-color: #FFD6A5;
+}
+
+.badge-lavender {
+  background-color: #C9B6FF;
+}
+
+.badge-ink {
+  background-color: #2B2340;
+  color: #FFFFFF;
+}
+
+/* Input Fields */
+.input-base {
+  width: 100%;
+  background-color: #FFFFFF;
+  color: #2B2340;
+  border: 2px solid #2B2340;
+  min-height: 44px;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.875rem;
+}
+
+.input-base:focus {
+  outline: 3px solid #2B2340;
+  outline-offset: 2px;
+}
+
+/* Seat Meter */
+.seat-meter-container {
+  height: 14px;
+  border: 2px solid #2B2340;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  width: 100%;
+}
+
+.seat-meter-bar {
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    #2B2340,
+    #2B2340 6px,
+    #FFB3C7 6px,
+    #FFB3C7 12px
+  );
+  transition: width 0.3s ease;
+}
+
+/* Tabs */
+.tab-button {
+  font-family: 'DM Mono', monospace;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  border: 2px solid #2B2340;
+  padding: 8px 16px;
+  background-color: #FFFFFF;
+  color: #2B2340;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.tab-button.active {
+  background-color: #2B2340;
+  color: #FFFFFF;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFF4EC;
+  border-left: 2px solid #2B2340;
+}
+::-webkit-scrollbar-thumb {
+  background: #2B2340;
+}
